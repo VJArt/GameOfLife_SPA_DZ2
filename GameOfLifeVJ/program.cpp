@@ -18,7 +18,7 @@ int main() {
 
     int choice;
     do {
-        // Clear the screen before displaying the new result
+        
         system(CLEAR_SCREEN);
 
         the_game.iscrtaj();
@@ -30,24 +30,22 @@ int main() {
         cout << "Enter your choice: ";
         cin >> choice;
 
-        // Ignore any additional characters entered on the same line
+ 
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         switch (choice) {
         case 1:
-            break; // Do nothing, continue with the loop
+            break; 
         case 2:
-            // Run simulation automatically
+           
             while (true) {
                 system(CLEAR_SCREEN);
                 the_game.iscrtaj();
                 the_game.sljedeca_generacija();
-                // Add a small delay to see the animation
-                // You can adjust the delay time as needed
-                this_thread::sleep_for(chrono::milliseconds(500));
+                this_thread::sleep_for(chrono::milliseconds(75));
             }
         case 0:
-            return 0; // Exit the program
+            return 0;
         default:
             cout << "Invalid choice! Please try again." << endl;
         }
